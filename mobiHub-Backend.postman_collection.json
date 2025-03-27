@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "872e010f-4475-489c-b7ee-bc31a8620aff",
+		"name": "mobiHub-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16214328"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user_03\",\r\n    \"email\": \"test03@foo.com\",\r\n    \"password\": \"123$%&abcDEF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trafficModel",
+			"item": [
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/trafficModel/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trafficModel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TestName2\",\r\n    \"description\": \"TestDesc\",\r\n    \"region\": \"TestRegion\",\r\n    \"coordinates\": \"49° 1′ N , 8° 24′ O\",\r\n    \"isVisibilityPublic\": false,\r\n    \"framework\": \"PTV_VISSIM\",\r\n    \"dataSourceUrl\": \"Test URL\",\r\n    \"characteristics\": [\r\n        {\r\n            \"modelLevel\": \"CHOICE_OF_WORKPLACE\",\r\n            \"modelMethod\": \"GRAVITATION_MODEL\"\r\n        }\r\n    ],\r\n    \"file\": {},\r\n    \"ownerUserId\": 1,\r\n    \"ownerTeamId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/trafficModel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trafficModel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "remoteAzure",
+			"item": [
+				{
+					"name": "createTM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TestName\",\r\n    \"description\": \"TestDesc\",\r\n    \"region\": \"TestRegion\",\r\n    \"coordinates\": \"49° 1′ N , 8° 24′ O\",\r\n    \"isVisibilityPublic\": false,\r\n    \"framework\": \"PTV_VISSIM\",\r\n    \"dataSourceUrl\": \"Test URL\",\r\n    \"characteristics\": [\r\n        {\r\n            \"modelLevel\": \"CHOICE_OF_WORKPLACE\",\r\n            \"modelMethod\": \"GRAVITATION_MODEL\"\r\n        }\r\n    ],\r\n    \"file\": {},\r\n    \"ownerUserId\": 1,\r\n    \"ownerTeamId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://mobihub.westeurope.cloudapp.azure.com:3001/trafficModel",
+							"protocol": "http",
+							"host": [
+								"mobihub",
+								"westeurope",
+								"cloudapp",
+								"azure",
+								"com"
+							],
+							"port": "3001",
+							"path": [
+								"trafficModel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "healthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://mobihub.westeurope.cloudapp.azure.com:3001/healthCheck",
+							"protocol": "http",
+							"host": [
+								"mobihub",
+								"westeurope",
+								"cloudapp",
+								"azure",
+								"com"
+							],
+							"port": "3001",
+							"path": [
+								"healthCheck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user_01\",\r\n    \"email\": \"test03@foo.com\",\r\n    \"password\": \"123$%&abcDEF\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://mobihub.westeurope.cloudapp.azure.com:3001/user",
+							"protocol": "http",
+							"host": [
+								"mobihub",
+								"westeurope",
+								"cloudapp",
+								"azure",
+								"com"
+							],
+							"port": "3001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "healthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/healthCheck",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"healthCheck"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

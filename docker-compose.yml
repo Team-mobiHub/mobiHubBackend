@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ""
+      POSTGRES_PASSWORD: ""
+      POSTGRES_DB: ""
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: mobihub-backend:latest
+    container_name: mobihub-backend
+    environment:
+      MOBIHUB_JWT_SECRET: ""
+
+      MOBIHUB_DB_URL: ""
+      MOBIHUB_DB_USER: ""
+      MOBIHUB_DB_PASSWORD: ""
+
+      MOBIHUB_EMAIL_HOST: ""
+      MOBIHUB_EMAIL_PORT: ""
+      MOBIHUB_EMAIL_USERNAME: ""
+      MOBIHUB_EMAIL_PASSWORD: ""
+      MOBIHUB_EMAIL_FROM_ADDRESS: ""
+
+      MOBIHUB_NEXTCLOUD_BASEURL: ""
+      MOBIHUB_NEXTCLOUD_USERNAME: ""
+      MOBIHUB_NEXTCLOUD_PASSWORD: ""
+
+      MOBIHUB_FRONTEND_BASEURL: ""
+    depends_on:
+      - db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8080:8080"
+
+volumes:
+  portainer_data:
+  postgres_data:

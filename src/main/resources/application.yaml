@@ -1,0 +1,34 @@
+ktor:
+  application:
+    modules:
+      - com.mobihub.ApplicationKt.module
+  deployment:
+    port: 8080
+
+jwt:
+  secret: $MOBIHUB_JWT_SECRET
+  issuer: ""
+  domain: ""
+  audience: ""
+  realm: ""
+  expirationInSeconds: 43200
+
+postgres:
+  url: $MOBIHUB_DB_URL
+  user: $MOBIHUB_DB_USER
+  password: $MOBIHUB_DB_PASSWORD
+
+email:
+  host: $MOBIHUB_EMAIL_HOST
+  port: $MOBIHUB_EMAIL_PORT
+  username: $MOBIHUB_EMAIL_USERNAME
+  password: $MOBIHUB_EMAIL_PASSWORD
+  fromAddress: $MOBIHUB_EMAIL_FROM_ADDRESS
+
+nextcloud:
+  baseUrl: $MOBIHUB_NEXTCLOUD_BASEURL
+  username: $MOBIHUB_NEXTCLOUD_USERNAME
+  password: $MOBIHUB_NEXTCLOUD_PASSWORD
+
+frontend:
+  baseUrl: $MOBIHUB_FRONTEND_BASEURL
