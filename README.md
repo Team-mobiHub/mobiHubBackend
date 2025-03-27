@@ -7,7 +7,7 @@ mobiHub is a platform for sharing traffic models.
 It was created by the mobiHub band as part of the [PSE](https://formal.kastel.kit.edu/teaching/pse/202324/?lang=de)
 at [KIT](https://www.kit.edu/) in the winter semester 2024/25.
 
-The mobiHubUi belongs to the mobiHubBackend.
+The [mobiHubUi](https://github.com/Team-mobiHub/mobiHubUi) belongs to the mobiHubBackend.
 
 ## Executing the mobiHubBackend
 
